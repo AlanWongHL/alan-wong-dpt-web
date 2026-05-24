@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Bios.css';
 
 export const Bios: React.FC = () => {
@@ -168,7 +169,7 @@ export const Bios: React.FC = () => {
           <p className="bios-cta-text">If Alan’s background and approach resonate with you, you are welcome to book a consultation or get in touch for collaboration.</p>
           <div className="bios-cta-buttons">
             <a href="https://calendar.app.google/ntmZjrDmT3ZZ2b549" target="_blank" rel="noopener noreferrer" className="bios-btn primary">BOOK A CONSULTATION</a>
-            <Link to="/contact" className="bios-btn ghost" onClick={() => window.scrollTo(0,0)}>CONTACT FOR COLLABORATION</Link>
+            <Link to="/contact" className="bios-btn ghost" onClick={() => window.scrollTo(0, 0)}>CONTACT FOR COLLABORATION</Link>
           </div>
         </section>
       </div>
