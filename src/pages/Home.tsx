@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Clock, ClipboardList, TrendingUp, Handshake, LineChart } from 'lucide-react';
 import './Home.css';
 
 const AnimatedNumber: React.FC<{ target: number; prefix?: string; suffix?: string; duration?: number }> = ({ target, prefix = '', suffix = '', duration = 2000 }) => {
@@ -88,24 +89,22 @@ export const Home: React.FC = () => {
   return (
     <div className="home-narrative">
       {/* Phase 1: Hero Section Restored */}
-      <section 
-        className="hero-section full-bleed"
-        onClick={() => navigate('/contact')}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && navigate('/contact')}
-        aria-label="Navigate to Contact"
-      >
+      <section className="hero-section full-bleed">
         <div className="hero-overlay"></div>
         <div className="container hero-content">
           <h1 className="hero-title">
-            <span className="hero-line line-1"><span className="hero-light">Get</span> <span className="hero-accent-large">STRONG</span></span>
-            <span className="hero-line line-2"><span className="hero-light">Be</span> <span className="hero-accent-large">SHARP</span></span>
-            <span className="hero-line line-3"><span className="hero-light">Go</span> <span className="hero-accent-large">STEADY</span></span>
+            <span className="hero-line line-1"><span className="hero-accent-large">STRONG</span></span>
+            <span className="hero-line line-2"><span className="hero-accent-large">SHARP</span></span>
+            <span className="hero-line line-3"><span className="hero-accent-large">STEADY</span></span>
           </h1>
           <p className="hero-subheadline">
-            Evidence-informed <span className="text-gold">Personal Training</span> at <span className="text-gold">Fitness First Barangaroo</span>.<br />
-            Optimising health and performance for busy professionals.
+            <span className="desktop-text">
+              Evidence-informed <span className="text-gold">Personal Training</span> at <span className="text-gold">Fitness First Titanium Barangaroo</span>.<br />
+              Optimising health and performance for busy professionals.
+            </span>
+            <span className="mobile-text hero-subtitle-1" style={{ display: 'none' }}>
+              <span style={{ color: '#cbd5e1' }}>Evidence-informed</span> <span className="text-gold">Personal Training</span> <span style={{ color: '#cbd5e1' }}>at</span> <span className="text-gold">Fitness First Titanium Barangaroo</span>.
+            </span>
           </p>
           
           <div className="hero-button-group">
@@ -118,7 +117,8 @@ export const Home: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
               style={{ textDecoration: 'none' }}
             >
-              BOOK A CONSULTATION
+              <span className="desktop-text">BOOK A CONSULTATION</span>
+              <span className="mobile-text" style={{ display: 'none' }}>BOOK A CONSULT</span>
             </a>
             <button 
               className="hero-cta-button ghost" 
@@ -128,7 +128,8 @@ export const Home: React.FC = () => {
                 navigate('/bios');
               }}
             >
-              EXPLORE TRAINER BIOS
+              <span className="desktop-text">EXPLORE TRAINER BIOS</span>
+              <span className="mobile-text" style={{ display: 'none' }}>TRAINER BIOS</span>
             </button>
           </div>
         </div>
@@ -143,32 +144,48 @@ export const Home: React.FC = () => {
             {/* Left Column: Text */}
             <div className="intro-text-container">
               <h1 className="intro-h1">ALAN WONG <span className="intro-h3-inline">MSc, BEd, CSCS, USAW, CPT</span></h1>
+              
+              <div className="mobile-only-images">
+                <img src="/Picture2.jpg?v=173" alt="Alan Wong Coaching" className="intro-photo-img" />
+                <img src="/2.jpeg" alt="Alan Wong Training" className="intro-photo-img img-bottom-focus" />
+              </div>
+              
               <h2 className="intro-subtitle">Clinical <span className="text-red">Reasoning</span> meets Human <span className="text-red">Performance</span></h2>
               <p className="intro-p">
                 Alan Wong brings together an uncommon combination of expertise in personal health, sport performance, and physiotherapy training. Formerly a <strong>Senior Lecturer in Sport Performance</strong> in Hong Kong, Alan moved to Australia in 2025 to commence his <strong>Doctor of Physiotherapy</strong> studies at the University of Sydney. With over 15 years of experience across health, fitness, and higher education, Alan continues to coach as a <strong>Personal Trainer</strong> at <strong>Fitness First Titanium Barangaroo</strong> alongside his DPT study, helping people build healthier and stronger lives.
               </p>
-              <p className="intro-p">
+              <p className="intro-p desktop-text">
                 Alan’s extensive experience has allowed him to coach a wide range of populations, including <strong>executives</strong>, young <strong>professionals</strong>, <strong>athletes</strong>, and referred <strong>patients</strong>. Whether you are a busy professional wanting to rebuild routine, an athlete seeking better performance, or someone who wants to train safely with long-term health in mind, Alan provides structured, effective, and tailored coaching to achieve your goals.
               </p>
               
-              <div style={{ marginTop: '1.5rem' }}>
+              <div className="bios-button-group" style={{ marginTop: '1.5rem', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                 <a 
                   className="hero-cta-button" 
                   href="https://calendar.app.google/ntmZjrDmT3ZZ2b549"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontSize: '1rem', padding: '12px 24px', textDecoration: 'none' }}
+                  style={{ fontSize: '0.85rem', padding: '10px 16px', textDecoration: 'none', width: '220px', textAlign: 'center', justifyContent: 'center', boxSizing: 'border-box' }}
                 >
                   BOOK A CONSULTATION
                 </a>
+                <button 
+                  className="hero-cta-button gold-solid" 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate('/bios');
+                  }}
+                  style={{ fontSize: '0.85rem', padding: '10px 16px', textDecoration: 'none', width: '220px', textAlign: 'center', justifyContent: 'center', boxSizing: 'border-box' }}
+                >
+                  FULL BIOS
+                </button>
               </div>
             </div>
             
             {/* Right Column: 2x2 Photo Grid */}
             <div className="intro-photo-grid">
-              <img src="/Picture2.jpg" alt="Alan Wong Coaching" className="intro-photo-img" />
+              <img src="/Picture2.jpg?v=173" alt="Alan Wong Coaching" className="intro-photo-img hide-on-mobile" />
               <img src="/669402914_10162897006154021_8910858062313522465_n.jpg" alt="Alan Wong Physiotherapy" className="intro-photo-img offset-image" />
-              <img src="/2.jpeg" alt="Alan Wong Training" className="intro-photo-img img-bottom-focus" />
+              <img src="/2.jpeg" alt="Alan Wong Training" className="intro-photo-img img-bottom-focus hide-on-mobile" />
               <img src="/515440915_10161817225954021_4705122261009137400_n.jpg" alt="Alan Wong Weightlifting" className="intro-photo-img offset-image" />
             </div>
           </div>
@@ -202,7 +219,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Phase 3: Core PT Specialties */}
-      <section className="narrative-specialties">
+      <section id="specialties" className="narrative-specialties">
         <div className="container" style={{ maxWidth: '1400px' }}>
           <h2 className="section-title specialties-heading">Our Specialised Training Tailored for You</h2>
           <p className="specialties-subtitle">
@@ -211,7 +228,7 @@ export const Home: React.FC = () => {
           <div className="specialties-grid">
             
             {/* Card 1 */}
-            <div className="specialty-card" onClick={() => navigate('/contact')}>
+            <div className="specialty-card" onClick={() => window.open('https://calendar.app.google/ntmZjrDmT3ZZ2b549', '_blank', 'noopener,noreferrer')}>
               <div className="specialty-bg bg-strength"></div>
               <div className="specialty-content">
                 <h3 className="specialty-title">Strength and Conditioning</h3>
@@ -223,7 +240,7 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="specialty-card" onClick={() => navigate('/contact')}>
+            <div className="specialty-card" onClick={() => window.open('https://calendar.app.google/ntmZjrDmT3ZZ2b549', '_blank', 'noopener,noreferrer')}>
               <div className="specialty-bg bg-health"></div>
               <div className="specialty-content">
                 <h3 className="specialty-title">Health and Fitness</h3>
@@ -235,7 +252,7 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="specialty-card" onClick={() => navigate('/contact')}>
+            <div className="specialty-card" onClick={() => window.open('https://calendar.app.google/ntmZjrDmT3ZZ2b549', '_blank', 'noopener,noreferrer')}>
               <div className="specialty-bg bg-weightlifting"></div>
               <div className="specialty-content">
                 <h3 className="specialty-title">Olympic Weightlifting</h3>
@@ -247,7 +264,7 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Card 4 */}
-            <div className="specialty-card" onClick={() => navigate('/contact')}>
+            <div className="specialty-card" onClick={() => window.open('https://calendar.app.google/ntmZjrDmT3ZZ2b549', '_blank', 'noopener,noreferrer')}>
               <div className="specialty-bg bg-prevention"></div>
               <div className="specialty-content">
                 <h3 className="specialty-title">Injury Prevention</h3>
@@ -302,64 +319,107 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Phase 4.5: Coaching Packages */}
-      <section id="pricing" className="narrative-pricing">
-        <div className="container" style={{ maxWidth: '1100px' }}>
-          <h2 className="section-title specialties-heading">COACHING PACKAGES</h2>
-          <p className="specialties-subtitle">
-            All packages include the <strong className="text-gold">same coaching quality</strong>. You do not pay more to receive better service — you simply <strong className="text-gold">pay less</strong> when you <strong className="text-gold">commit to more</strong>.
-          </p>
-          <div className="pricing-grid">
-            
-            {/* Card 1 */}
-            <div className="pricing-card">
-              <h3 className="pricing-title">Start</h3>
-              <div className="pricing-subtitle">SINGLE SESSION</div>
-              <div className="pricing-price">$150<span className="pricing-period"> / session</span></div>
-              <ul className="pricing-features">
-                <li className="highlight-feature">1 × 45-minute session</li>
-                <li>Exercise prescription</li>
-                <li>Periodised programming</li>
-                <li>Progress assessment</li>
-              </ul>
-              <a className="pricing-btn" href="https://calendar.app.google/ntmZjrDmT3ZZ2b549" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', lineHeight: '1.3' }}>BOOK A CONSULT<br/>FOR FREE</a>
-            </div>
-
-            {/* Card 2 */}
-            <div className="pricing-card popular">
-              <div className="popular-badge">MOST POPULAR</div>
-              <h3 className="pricing-title">Build</h3>
-              <div className="pricing-subtitle">10-SESSION PACKAGE</div>
-              <div className="pricing-price">$130<span className="pricing-period"> / session</span></div>
-              <ul className="pricing-features">
-                <li className="highlight-feature">10 × 45-minute sessions</li>
-                <li>Exercise prescription</li>
-                <li>Periodised programming</li>
-                <li>Progress assessment and report</li>
-              </ul>
-              <a className="pricing-btn" href="https://calendar.app.google/ntmZjrDmT3ZZ2b549" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', lineHeight: '1.3' }}>BOOK A CONSULT<br/>FOR FREE</a>
-            </div>
-
-            {/* Card 3 */}
-            <div className="pricing-card">
-              <h3 className="pricing-title">Perform</h3>
-              <div className="pricing-subtitle">20-SESSION PACKAGE</div>
-              <div className="pricing-price">$110<span className="pricing-period"> / session</span></div>
-              <ul className="pricing-features">
-                <li className="highlight-feature">20 × 45-minute sessions</li>
-                <li>Exercise prescription</li>
-                <li>Periodised programming</li>
-                <li>Progress assessment and report</li>
-              </ul>
-              <a className="pricing-btn" href="https://calendar.app.google/ntmZjrDmT3ZZ2b549" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', lineHeight: '1.3' }}>BOOK A CONSULT<br/>FOR FREE</a>
-            </div>
-
+        {/* Phase 4.5: Coaching Packages */}
+        <section id="pricing" className="narrative-pricing">
+          <div className="container" style={{ maxWidth: '1100px' }}>
+            <h2 className="section-title specialties-heading">COACHING PACKAGES</h2>
+            <p className="specialties-subtitle">
+              All packages include the <strong className="text-gold">same coaching quality</strong>. You do not pay more to receive better service — you simply <strong className="text-gold">pay less</strong> when you <strong className="text-gold">commit to more</strong>.
+            </p>
           </div>
-          <p className="specialties-subtitle" style={{ marginTop: '2.5rem', textAlign: 'center', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
-            <strong className="text-gold">No lock-in</strong>. Fully flexible. All in-person coaching is conducted exclusively at <strong className="text-gold">Fitness First Titanium Barangaroo</strong>.
-          </p>
-        </div>
-      </section>
+          
+          {/* New Unified Coaching Packages Section */}
+          <div className="unified-pricing-section">
+            <div className="unified-pricing-bg"></div>
+            
+            <div className="unified-pricing-container">
+              
+              {/* Left Column: Common Features */}
+              <div className="unified-features-panel">
+                <ul className="unified-feature-list">
+                  <li>
+                    <div className="unified-icon-wrapper"><Clock size={24} /></div>
+                    <div className="unified-feature-text">
+                      <strong>45-minute Personal Training Sessions</strong>
+                      <p>1-to-1 expert coaching sessions tailored to you</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="unified-icon-wrapper"><ClipboardList size={24} /></div>
+                    <div className="unified-feature-text">
+                      <strong>Personalized Exercise Prescription</strong>
+                      <p>Evidence-informed exercise to optimise your progress</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="unified-icon-wrapper"><TrendingUp size={24} /></div>
+                    <div className="unified-feature-text">
+                      <strong>Periodised Programming & Planning</strong>
+                      <p>Progressive training plan for peak performance</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="unified-icon-wrapper"><Handshake size={24} /></div>
+                    <div className="unified-feature-text">
+                      <strong>Ongoing Coach Support</strong>
+                      <p>Guidance, feedback, and accountability every step</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="unified-icon-wrapper"><LineChart size={24} /></div>
+                    <div className="unified-feature-text">
+                      <strong>Assessments & Reports</strong>
+                      <p>Track progress with assessments and insights</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Right Column: Pricing Pillars */}
+              <div className="unified-pillars-panel">
+                <div className="unified-pillar">
+                  <div className="pillar-header">START</div>
+                  <div className="pillar-content">
+                    <div className="pillar-price">$150<span> / session</span></div>
+                    <div className="pillar-desc">1 × 45-minute session</div>
+                  </div>
+                </div>
+
+                <div className="unified-pillar popular">
+                  <div className="pillar-badge">MOST POPULAR</div>
+                  <div className="pillar-header">BUILD</div>
+                  <div className="pillar-content">
+                    <div className="pillar-price">$130<span> / session</span></div>
+                    <div className="pillar-desc">10 × 45-minute sessions</div>
+                  </div>
+                </div>
+
+                <div className="unified-pillar">
+                  <div className="pillar-header">PERFORM</div>
+                  <div className="pillar-content">
+                    <div className="pillar-price">$110<span> / session</span></div>
+                    <div className="pillar-desc">20 × 45-minute sessions</div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+            {/* Bottom Button */}
+            <div className="unified-cta-container">
+              <a className="unified-cta-btn" href="https://calendar.app.google/ntmZjrDmT3ZZ2b549" target="_blank" rel="noopener noreferrer">
+                BOOK INITIAL CONSULTATION FOR FREE
+              </a>
+            </div>
+            
+          </div>
+
+          <div className="container" style={{ maxWidth: '1100px' }}>
+            <p className="specialties-subtitle" style={{ marginTop: '2.5rem', textAlign: 'center', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
+              <strong className="text-gold">No lock-in</strong>. Fully flexible. All in-person coaching is conducted exclusively at <strong className="text-gold">Fitness First Titanium Barangaroo</strong>.
+            </p>
+          </div>
+        </section>
 
       {/* Phase 5: Testimonials */}
       <section className="narrative-testimonials">

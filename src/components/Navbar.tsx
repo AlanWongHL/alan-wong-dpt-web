@@ -34,6 +34,19 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  const handleSpecialtiesClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsOpen(false);
+    if (location.pathname === '/') {
+      document.getElementById('specialties')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById('specialties')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   const navLinks = [
     { name: 'Health', path: '/health' },
     { name: 'Sport Performance', path: '/sport-performance' },
@@ -45,31 +58,50 @@ export const Navbar: React.FC = () => {
     <header className="navbar">
       <div className="container navbar-container">
         
-        <Link to="/" className="navbar-brand" onClick={() => setIsOpen(false)}>
-          <LogoMark />
-          <span className="navbar-logo-text">ALAN WONG DPT</span>
+        <Link to="/" className="navbar-brand" onClick={() => {
+          setIsOpen(false);
+          window.scrollTo(0, 0);
+        }}>
+          <img src="/logo6.png" alt="Alan Wong DPT Logo" className="navbar-custom-logo" />
         </Link>
         
         <div className={`navbar-nav-section ${isOpen ? 'is-open' : ''}`}>
-          <div className="navbar-highlight-link-container" style={{ display: 'flex', alignItems: 'center', flexGrow: 1, justifyContent: 'center' }}>
-            <Link to="/bios" className="navbar-slim-box" onClick={() => setIsOpen(false)}>BIOS</Link>
+          
+          {/* Desktop Navigation */}
+          <div className="desktop-nav-only" style={{ display: 'flex', width: '100%', alignItems: 'center' }}>
+            
+            {/* Linear Cluster for all links */}
+            <div style={{ display: 'flex', flexGrow: 1, justifyContent: 'flex-start', marginLeft: '1rem', alignItems: 'center' }}>
+              <div className="navbar-grid-nav" style={{ width: 'auto' }}>
+                <ul className="navbar-linear-links">
+                  <li><Link to="/bios" onClick={() => setIsOpen(false)} style={{ color: '#D4AF37' }}>BIOS</Link></li>
+                  <li><a href="/#specialties" onClick={handleSpecialtiesClick}>HEALTH</a></li>
+                  <li><a href="/#specialties" onClick={handleSpecialtiesClick}>FITNESS</a></li>
+                  <li><a href="/#specialties" onClick={handleSpecialtiesClick}>PERFORMANCE</a></li>
+                  <li><a href="/#specialties" onClick={handleSpecialtiesClick}>OLYMPIC LIFTING</a></li>
+                  <li><a href="/#pricing" onClick={(e) => { handlePricingClick(e); setIsOpen(false); }} style={{ color: '#D4AF37' }}>PRICING</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="navbar-cta-container">
+              <a href="https://calendar.app.google/ntmZjrDmT3ZZ2b549" target="_blank" rel="noopener noreferrer" className="navbar-cta-btn" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none' }}>BOOK A CONSULTATION</a>
+              <Link to="/contact" className="navbar-ghost-btn" onClick={() => setIsOpen(false)}>CONTACT FOR COLLABORATION</Link>
+            </div>
           </div>
 
-          <div className="navbar-grid-nav">
-            <ul className="navbar-grid-links">
-              {navLinks.map((link) => (
-                <li key={link.path}>
-                  <Link to={link.path} onClick={() => setIsOpen(false)}>{link.name}</Link>
-                </li>
-              ))}
-            </ul>
+          {/* Mobile Navigation - Simplified Custom List */}
+          <div className="mobile-nav-only">
+            <Link to="/bios" className="mobile-simple-link" onClick={() => setIsOpen(false)} style={{ color: '#D4AF37' }}>BIOS</Link>
+            <a href="/#specialties" className="mobile-simple-link" onClick={handleSpecialtiesClick}>HEALTH</a>
+            <a href="/#specialties" className="mobile-simple-link" onClick={handleSpecialtiesClick}>FITNESS</a>
+            <a href="/#specialties" className="mobile-simple-link" onClick={handleSpecialtiesClick}>PERFORMANCE</a>
+            <a href="/#specialties" className="mobile-simple-link" onClick={handleSpecialtiesClick}>OLYMPIC LIFTING</a>
+            <a href="/#pricing" className="mobile-simple-link" onClick={handlePricingClick} style={{ color: '#D4AF37' }}>PRICING</a>
+            
+            <a href="https://calendar.app.google/ntmZjrDmT3ZZ2b549" target="_blank" rel="noopener noreferrer" className="navbar-cta-btn mobile-cta-btn" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none' }}>BOOK A CONSULTATION</a>
           </div>
-          
-          <div className="navbar-cta-container">
-            <a href="/#pricing" className="navbar-slim-box" onClick={handlePricingClick} style={{ marginRight: '16px' }}>PRICING</a>
-            <a href="https://calendar.app.google/ntmZjrDmT3ZZ2b549" target="_blank" rel="noopener noreferrer" className="navbar-cta-btn" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none' }}>BOOK A CONSULTATION</a>
-            <Link to="/contact" className="navbar-ghost-btn" onClick={() => setIsOpen(false)}>CONTACT FOR COLLABORATION</Link>
-          </div>
+
         </div>
 
         <button className="navbar-toggle" onClick={toggleMenu} aria-label="Toggle menu">

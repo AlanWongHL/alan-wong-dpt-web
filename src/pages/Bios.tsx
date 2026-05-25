@@ -25,7 +25,7 @@ export const Bios: React.FC = () => {
           </div>
           <div className="bios-image-col">
             <div className="bios-photo-grid">
-              <img src="/Picture2.jpg" alt="Alan Wong Coaching" className="bios-photo-img" />
+              <img src="/Picture2.jpg?v=1779683435035" alt="Alan Wong Coaching" className="bios-photo-img" />
               <img src="/669402914_10162897006154021_8910858062313522465_n.jpg" alt="Alan Wong Physiotherapy" className="bios-photo-img offset-image" />
               <img src="/2.jpeg" alt="Alan Wong Training" className="bios-photo-img img-bottom-focus" />
               <img src="/515440915_10161817225954021_4705122261009137400_n.jpg" alt="Alan Wong Weightlifting" className="bios-photo-img offset-image" />
@@ -43,10 +43,10 @@ export const Bios: React.FC = () => {
           </div>
           <div className="bios-image-col">
             <div className="bios-photo-grid">
-              <img src="/5.jpg" alt="Alan Wong Coaching Athletes" className="bios-photo-img" />
-              <img src="/50.jpeg" alt="Alan Wong Group Training" className="bios-photo-img offset-image" />
+              <img src="/5.jpg?v=1779686439318" alt="Alan Wong Coaching Athletes" className="bios-photo-img" />
+              <img src="/50.jpeg?v=1779686439318" alt="Alan Wong Group Training" className="bios-photo-img offset-image" />
               <img src="/strength.jfif" alt="Alan Wong Strength Training" className="bios-photo-img" style={{ objectPosition: '20% top' }} />
-              <img src="/Picture50.jpg" alt="Alan Wong Exercise Lab" className="bios-photo-img offset-image" />
+              <img src="/Picture50.jpg?v=1779686439319" alt="Alan Wong Exercise Lab" className="bios-photo-img offset-image" />
             </div>
           </div>
         </section>
@@ -62,9 +62,9 @@ export const Bios: React.FC = () => {
           <div className="bios-image-col">
             <div className="bios-photo-grid">
               <img src="/MBBS.jpg" alt="Alan Wong Teaching MBBS Students" className="bios-photo-img" style={{ objectPosition: '80% top' }} />
-              <img src="/31.jpg" alt="Alan Wong LaLiga Business School Tour" className="bios-photo-img offset-image" />
+              <img src="/31.jpg?v=1779686439318" alt="Alan Wong LaLiga Business School Tour" className="bios-photo-img offset-image" />
               <img src="/515440915_10161817225954021_4705122261009137400_n.jpg" alt="Alan Wong Weightlifting" className="bios-photo-img" />
-              <img src="/32.jpg" alt="Alan Wong Students" className="bios-photo-img offset-image" />
+              <img src="/32.jpg?v=1779686439318" alt="Alan Wong Students" className="bios-photo-img offset-image" />
             </div>
           </div>
         </section>
@@ -87,10 +87,10 @@ export const Bios: React.FC = () => {
           </div>
           <div className="bios-image-col">
             <div className="bios-photo-grid">
-              <img src="/55.jpg" alt="Alan Wong Advisory 1" className="bios-photo-img" />
-              <img src="/56.jpg" alt="Alan Wong Advisory 2" className="bios-photo-img offset-image" />
-              <img src="/57.jpg" alt="Alan Wong Advisory 3" className="bios-photo-img" style={{ objectPosition: '15% top' }} />
-              <img src="/58.jpg" alt="Alan Wong Advisory 4" className="bios-photo-img offset-image" style={{ objectPosition: '62% center' }} />
+              <img src="/55.jpg?v=1779686439319" alt="Alan Wong Advisory 1" className="bios-photo-img" />
+              <img src="/56.jpg?v=1779686439318" alt="Alan Wong Advisory 2" className="bios-photo-img offset-image" />
+              <img src="/57.jpg?v=1779686439318" alt="Alan Wong Advisory 3" className="bios-photo-img" style={{ objectPosition: '15% top' }} />
+              <img src="/58.jpg?v=1779686439319" alt="Alan Wong Advisory 4" className="bios-photo-img offset-image" style={{ objectPosition: '62% center' }} />
             </div>
           </div>
         </section>
@@ -117,7 +117,7 @@ export const Bios: React.FC = () => {
               <img src="/61.jpg?v=3" alt="Alan Wong Research 1" className="bios-photo-img" style={{ objectPosition: '20% top' }} />
               <img src="/62.png" alt="Alan Wong Research 2" className="bios-photo-img offset-image" />
               <img src="/63.jpeg" alt="Alan Wong Research 3" className="bios-photo-img" />
-              <img src="/64.jpg" alt="Alan Wong Research 4" className="bios-photo-img offset-image" />
+              <img src="/64.jpg?v=1779686439319" alt="Alan Wong Research 4" className="bios-photo-img offset-image" />
             </div>
           </div>
         </section>

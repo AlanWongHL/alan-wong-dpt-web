@@ -32,7 +32,7 @@ export const Research: React.FC = () => {
             </p>
           </div>
           <div className="health-explanation-image">
-            <img src="/Picture2.jpg" alt="Research Overview" className="explanation-img" />
+            <img src="/Picture2.jpg?v=1779683435037" alt="Research Overview" className="explanation-img" />
           </div>
         </div>
       </section>

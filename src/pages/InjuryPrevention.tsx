@@ -32,7 +32,7 @@ export const InjuryPrevention: React.FC = () => {
             </p>
           </div>
           <div className="health-explanation-image">
-            <img src="/Picture2.jpg" alt="Injury Prevention Overview" className="explanation-img" />
+            <img src="/Picture2.jpg?v=1779683435037" alt="Injury Prevention Overview" className="explanation-img" />
           </div>
         </div>
       </section>

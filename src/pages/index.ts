@@ -8,3 +8,4 @@ export * from './Teaching';
 export * from './OlympicWeightlifting';
 export * from './InjuryPrevention';
 export * from './Bios';
+export * from './Contact';

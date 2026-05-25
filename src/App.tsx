@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar, Footer } from './components';
-import { Home, Health, Fitness, SportPerformance, Executive, Research, Teaching, OlympicWeightlifting, InjuryPrevention, Bios } from './pages';
+import { Home, Health, Fitness, SportPerformance, Executive, Research, Teaching, OlympicWeightlifting, InjuryPrevention, Bios, Contact } from './pages';
 import './App.css';
 
-// Placeholder Pages
-const Contact = () => <div className="container section"><h1>Contact</h1></div>;
+// Removed Placeholder for Contact
 
 function App() {
   return (
