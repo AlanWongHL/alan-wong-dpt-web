@@ -44,38 +44,24 @@ const AnimatedNumber: React.FC<{ target: number; prefix?: string; suffix?: strin
 const TESTIMONIALS = [
   {
     id: 1,
-    name: "Sarah Jenkins",
-    title: "Olympic Weightlifter",
-    photo: "https://i.pravatar.cc/150?img=1",
-    review: "Alan completely transformed my approach to lifting. His periodised programming helped me break through a 2-year plateau and qualify for Nationals. His eye for biomechanics is unmatched."
+    name: "Dean Ellenwood",
+    title: "Former Canadian National Track Athlete\nWorld Youth Championships Bronze Medallist\n2:40 Marathoner",
+    photo: "/Dean.webp",
+    review: "Alan is an exceptionally consistent, professional, and inspiring person to work with. He approaches every project with genuine care, curiosity, and a strong commitment to excellence. Alan brings out the best in those around him by creating supportive environments and implementing effective systems that help everyone around him succeed. His dedication to continuous learning and helping others reach their full potential make him an outstanding personal trainer and colleague."
   },
   {
     id: 2,
-    name: "David Chen",
-    title: "Corporate Executive",
-    photo: "https://i.pravatar.cc/150?img=11",
-    review: "As a busy executive, I needed someone who respected my time but pushed me hard. Alan's tailored approach improved my energy levels drastically while bulletproofing my back against injury."
+    name: "Victor Pao",
+    title: "Certified Physiotherapist\nRecreational Brazilian Jiu-Jitsu Athlete",
+    photo: "/Victor.jpeg",
+    review: "I have had the pleasure of studying alongside Alan in the Doctor of Physiotherapy program, and he has consistently impressed me with both his knowledge and his commitment to continuous learning. Studying with him has been a genuinely positive experience. He often takes the initiative to organise study groups, creating a supportive environment where everyone can learn, share ideas, and grow together.\n\nAlan is also someone I trust deeply as a teammate. During group projects, he always completes his own responsibilities to a high standard while generously offering his time and support to others. He brings thoughtful perspectives that encourage the team to think more broadly and consider different approaches to clinical reasoning and problem-solving.\n\nAbove all, Alan is a reliable, professional, and caring person. I have no doubt that he will provide every client with thoughtful guidance, evidence-based practice, and the same dedication that he has consistently shown throughout our time studying together."
   },
   {
     id: 3,
-    name: "Emma Robertson",
-    title: "Recreational Runner",
-    photo: "https://i.pravatar.cc/150?img=5",
-    review: "I came to Alan with chronic knee pain. Through careful assessment and targeted strengthening, I'm now running pain-free. He doesn't just treat the symptom; he builds resilience."
-  },
-  {
-    id: 4,
-    name: "Marcus Thorne",
-    title: "Professional Rugby Player",
-    photo: "https://i.pravatar.cc/150?img=14",
-    review: "Alan's expertise in high-performance conditioning is elite. The transition from off-season to in-season under his guidance was the smoothest and strongest of my entire career."
-  },
-  {
-    id: 5,
-    name: "Jessica Alcott",
-    title: "National Swim Coach",
-    photo: "https://i.pravatar.cc/150?img=9",
-    review: "Having Alan consult with our team elevated our entire dry-land program. His ability to translate complex sports science into practical coaching cues is a game-changer for our athletes."
+    name: "Gavin Yeung",
+    title: "Doctor of Physiotherapy Candidate\nRecreational Tennis Player",
+    photo: "/Gavin.jpeg",
+    review: "Alan is very logical and analytical in his thinking and prescription of exercises. It gives me the confidence that everything he says and recommends is founded on a very solid base of clinical reasoning."
   }
 ];
 
@@ -381,7 +367,7 @@ export const Home: React.FC = () => {
                   <div className="pillar-header">START</div>
                   <div className="pillar-content">
                     <div className="pillar-price">$150<span> / session</span></div>
-                    <div className="pillar-desc">1 × 45-minute session</div>
+                    <div className="pillar-desc">1x session / week</div>
                   </div>
                 </div>
 
@@ -389,20 +375,29 @@ export const Home: React.FC = () => {
                   <div className="pillar-badge">MOST POPULAR</div>
                   <div className="pillar-header">BUILD</div>
                   <div className="pillar-content">
-                    <div className="pillar-price">$130<span> / session</span></div>
-                    <div className="pillar-desc">10 × 45-minute sessions</div>
+                    <div className="pillar-price">$130<span> / each</span></div>
+                    <div className="pillar-desc">2x sessions / week</div>
                   </div>
                 </div>
 
                 <div className="unified-pillar">
                   <div className="pillar-header">PERFORM</div>
                   <div className="pillar-content">
-                    <div className="pillar-price">$110<span> / session</span></div>
-                    <div className="pillar-desc">20 × 45-minute sessions</div>
+                    <div className="pillar-price">$110<span> / each</span></div>
+                    <div className="pillar-desc">3x sessions / week</div>
                   </div>
                 </div>
               </div>
               
+            </div>
+
+            {/* Flexibility Notice */}
+            <div style={{ textAlign: 'center', marginTop: '3.5rem', marginBottom: '2rem', padding: '0 2rem' }}>
+              <h3 style={{ color: '#D4AF37', letterSpacing: '2px', fontSize: '1.2rem', marginBottom: '0.8rem' }}>COMPLETE FLEXIBILITY</h3>
+              <p style={{ color: '#cbd5e1', fontSize: '0.95rem', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
+                Pay only for the sessions you complete each week—<br />
+                <strong style={{ color: '#D4AF37' }}>No lock-in contracts, upfront packages, or make-up sessions required.</strong>
+              </p>
             </div>
 
             {/* Bottom Button */}
@@ -416,7 +411,7 @@ export const Home: React.FC = () => {
 
           <div className="container" style={{ maxWidth: '1100px' }}>
             <p className="specialties-subtitle" style={{ marginTop: '2.5rem', textAlign: 'center', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
-              <strong className="text-gold">No lock-in</strong>. Fully flexible. All in-person coaching is conducted exclusively at <strong className="text-gold">Fitness First Titanium Barangaroo</strong>.
+              All in-person coaching is conducted exclusively at <strong className="text-gold">Fitness First Titanium Barangaroo</strong>.
             </p>
           </div>
         </section>
@@ -430,14 +425,15 @@ export const Home: React.FC = () => {
             <div className="testimonials-track">
               {TESTIMONIALS.map((t) => (
                 <div key={t.id} className="testimonial-card">
-                  <div className="quote-mark-small">"</div>
-                  <p className="testimonial-text-small">{t.review}</p>
                   <div className="testimonial-author">
                     <img src={t.photo} alt={t.name} className="testimonial-photo" />
                     <div className="testimonial-author-info">
                       <h4 className="testimonial-name">{t.name}</h4>
                       <p className="testimonial-title">{t.title}</p>
                     </div>
+                  </div>
+                  <div className="testimonial-text-wrapper">
+                    <p className="testimonial-text-small">{t.review}</p>
                   </div>
                 </div>
               ))}
