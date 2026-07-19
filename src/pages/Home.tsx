@@ -52,7 +52,7 @@ const TESTIMONIALS = [
   {
     id: 2,
     name: "Victor Pao",
-    title: "Certified Physiotherapist\nRecreational Brazilian Jiu-Jitsu Athlete",
+    title: "Musculoskeletal Physiotherapist\nRecreational Brazilian Jiu-Jitsu Athlete",
     photo: "/Victor.jpeg",
     review: "I have had the pleasure of studying alongside Alan in the Doctor of Physiotherapy program, and he has consistently impressed me with both his knowledge and his commitment to continuous learning. Studying with him has been a genuinely positive experience. He often takes the initiative to organise study groups, creating a supportive environment where everyone can learn, share ideas, and grow together.\n\nAlan is also someone I trust deeply as a teammate. During group projects, he always completes his own responsibilities to a high standard while generously offering his time and support to others. He brings thoughtful perspectives that encourage the team to think more broadly and consider different approaches to clinical reasoning and problem-solving.\n\nAbove all, Alan is a reliable, professional, and caring person. I have no doubt that he will provide every client with thoughtful guidance, evidence-based practice, and the same dedication that he has consistently shown throughout our time studying together."
   },
